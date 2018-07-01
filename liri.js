@@ -77,7 +77,7 @@ function movieThis(mArg) {
 // read the contents of random.txt and do what it says
 function doWhatItSays() {
     //console.log('Inside the dowhatitsays function');
-    fs.readFile("random2.txt", "utf8", function (error, data) {
+    fs.readFile("random.txt", "utf8", function (error, data) {
 
         // If the code experiences any errors it will log the error to the console.
         if (error) {
@@ -251,5 +251,5 @@ function choices(arg1, arg2) {
     }
 }
 
-// On entry - call "choices" function with input parameters
+// On entry - call "choices" function with parameters entered by the user
 choices(param1, param2);
