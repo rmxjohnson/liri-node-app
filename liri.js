@@ -48,7 +48,7 @@ function movieThis(mArg) {
         // If the request is successful (i.e. if the response status code is 200)
         if (!error && response.statusCode === 200) {
 
-            //console.log(body);
+            console.log(JSON.parse(body));
             // check if the movie is found
             if (JSON.parse(body).Response == "False") {
                 console.log('***************************************************');
@@ -63,7 +63,12 @@ function movieThis(mArg) {
             console.log("Title: " + JSON.parse(body).Title);
             console.log("Year: " + JSON.parse(body).Year);
             console.log("imdb Rating: " + JSON.parse(body).imdbRating);
-            console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value);
+            if (JSON.parse(body).Ratings.length > 1) {
+                console.log("Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value);
+            }
+            else {
+                console.log("Rotten Tomatoes Rating: No Rating Found");
+            }
             console.log("Country: " + JSON.parse(body).Country);
             console.log("Language: " + JSON.parse(body).Language);
             console.log("Plot: " + JSON.parse(body).Plot);
